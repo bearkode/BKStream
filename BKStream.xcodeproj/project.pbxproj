@@ -1,0 +1,369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E244A511AD3CBC300C11BDD /* BKStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E244A501AD3CBC300C11BDD /* BKStream.h */; };
+		2E244A531AD3CBC300C11BDD /* BKStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E244A521AD3CBC300C11BDD /* BKStream.m */; };
+		2E244A591AD3CBC300C11BDD /* libBKStream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E244A4D1AD3CBC300C11BDD /* libBKStream.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2E244A5A1AD3CBC300C11BDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2E244A451AD3CBC300C11BDD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E244A4C1AD3CBC300C11BDD;
+			remoteInfo = BKStream;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2E244A4D1AD3CBC300C11BDD /* libBKStream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBKStream.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E244A501AD3CBC300C11BDD /* BKStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKStream.h; sourceTree = "<group>"; };
+		2E244A521AD3CBC300C11BDD /* BKStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKStream.m; sourceTree = "<group>"; };
+		2E244A581AD3CBC300C11BDD /* BKStreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BKStreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E244A5E1AD3CBC300C11BDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E244A4A1AD3CBC300C11BDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E244A551AD3CBC300C11BDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E244A591AD3CBC300C11BDD /* libBKStream.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E244A441AD3CBC300C11BDD = {
+			isa = PBXGroup;
+			children = (
+				2E244A4F1AD3CBC300C11BDD /* BKStream */,
+				2E244A5C1AD3CBC300C11BDD /* BKStreamTests */,
+				2E244A4E1AD3CBC300C11BDD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2E244A4E1AD3CBC300C11BDD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2E244A4D1AD3CBC300C11BDD /* libBKStream.a */,
+				2E244A581AD3CBC300C11BDD /* BKStreamTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2E244A4F1AD3CBC300C11BDD /* BKStream */ = {
+			isa = PBXGroup;
+			children = (
+				2E244A501AD3CBC300C11BDD /* BKStream.h */,
+				2E244A521AD3CBC300C11BDD /* BKStream.m */,
+			);
+			path = BKStream;
+			sourceTree = "<group>";
+		};
+		2E244A5C1AD3CBC300C11BDD /* BKStreamTests */ = {
+			isa = PBXGroup;
+			children = (
+				2E244A5D1AD3CBC300C11BDD /* Supporting Files */,
+			);
+			path = BKStreamTests;
+			sourceTree = "<group>";
+		};
+		2E244A5D1AD3CBC300C11BDD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2E244A5E1AD3CBC300C11BDD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2E244A4B1AD3CBC300C11BDD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E244A511AD3CBC300C11BDD /* BKStream.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2E244A4C1AD3CBC300C11BDD /* BKStream */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E244A611AD3CBC300C11BDD /* Build configuration list for PBXNativeTarget "BKStream" */;
+			buildPhases = (
+				2E244A491AD3CBC300C11BDD /* Sources */,
+				2E244A4A1AD3CBC300C11BDD /* Frameworks */,
+				2E244A4B1AD3CBC300C11BDD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BKStream;
+			productName = BKStream;
+			productReference = 2E244A4D1AD3CBC300C11BDD /* libBKStream.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		2E244A571AD3CBC300C11BDD /* BKStreamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E244A641AD3CBC300C11BDD /* Build configuration list for PBXNativeTarget "BKStreamTests" */;
+			buildPhases = (
+				2E244A541AD3CBC300C11BDD /* Sources */,
+				2E244A551AD3CBC300C11BDD /* Frameworks */,
+				2E244A561AD3CBC300C11BDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E244A5B1AD3CBC300C11BDD /* PBXTargetDependency */,
+			);
+			name = BKStreamTests;
+			productName = BKStreamTests;
+			productReference = 2E244A581AD3CBC300C11BDD /* BKStreamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2E244A451AD3CBC300C11BDD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = bearkode;
+				TargetAttributes = {
+					2E244A4C1AD3CBC300C11BDD = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					2E244A571AD3CBC300C11BDD = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = 2E244A481AD3CBC300C11BDD /* Build configuration list for PBXProject "BKStream" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2E244A441AD3CBC300C11BDD;
+			productRefGroup = 2E244A4E1AD3CBC300C11BDD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2E244A4C1AD3CBC300C11BDD /* BKStream */,
+				2E244A571AD3CBC300C11BDD /* BKStreamTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E244A561AD3CBC300C11BDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E244A491AD3CBC300C11BDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E244A531AD3CBC300C11BDD /* BKStream.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E244A541AD3CBC300C11BDD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2E244A5B1AD3CBC300C11BDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E244A4C1AD3CBC300C11BDD /* BKStream */;
+			targetProxy = 2E244A5A1AD3CBC300C11BDD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2E244A5F1AD3CBC300C11BDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2E244A601AD3CBC300C11BDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2E244A621AD3CBC300C11BDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2E244A631AD3CBC300C11BDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2E244A651AD3CBC300C11BDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BKStreamTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2E244A661AD3CBC300C11BDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BKStreamTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2E244A481AD3CBC300C11BDD /* Build configuration list for PBXProject "BKStream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E244A5F1AD3CBC300C11BDD /* Debug */,
+				2E244A601AD3CBC300C11BDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E244A611AD3CBC300C11BDD /* Build configuration list for PBXNativeTarget "BKStream" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E244A621AD3CBC300C11BDD /* Debug */,
+				2E244A631AD3CBC300C11BDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2E244A641AD3CBC300C11BDD /* Build configuration list for PBXNativeTarget "BKStreamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E244A651AD3CBC300C11BDD /* Debug */,
+				2E244A661AD3CBC300C11BDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2E244A451AD3CBC300C11BDD /* Project object */;
+}
