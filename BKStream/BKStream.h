@@ -13,7 +13,7 @@
 @interface BKStream : NSObject <NSStreamDelegate>
 
 
-- (instancetype)initWithStream:(NSStream *)aStream delegate:(id)aDelegate;
+- (instancetype)initWithInputStream:(NSInputStream *)aInputStream outputStream:(NSOutputStream *)aOutputStream delegate:(id)aDelegate;
 
 
 - (void)open;
@@ -24,20 +24,14 @@
 - (void)writeData:(NSData *)aData;
 
 
-/*  Override  */
-- (void)didReceiveStreamEventNone;
-- (void)didReceiveStreamEventOpenComplete;
-- (void)didReceiveStreamEventHasBytesAvailable;
-- (void)didReceiveStreamEventHasSpaceAvailable;
-- (void)didReceiveStreamEventErrorOccurred;
-- (void)didReceiveStreamEventEndEncountered;
-
-
 @end
 
 
 @protocol NEBufferedStreamDelegate <NSObject>
 
-- (void)stream:(BKStream *)aStream didReceiveData:(NSData *)aData;
+- (void)streamDidOpen:(BKStream *)aStream;
+- (void)streamDidClose:(BKStream *)aStream;
+- (void)stream:(BKStream *)aStream didWriteData:(NSData *)aData;
+- (void)stream:(BKStream *)aStream didReadData:(NSData *)aData;
 
 @end

@@ -15,23 +15,33 @@ static const NSInteger kMaxBufferSize = 1024;
 
 @implementation BKStream
 {
-    id             mDelegate;
-    NSStream      *mStream;
-    NSMutableData *mBuffer;
+    id              mDelegate;
+    
+    NSInputStream  *mInStream;
+    NSMutableData  *mInBuffer;
+    
+    NSOutputStream *mOutStream;
+    NSMutableData  *mOutBuffer;
+    
+    BOOL            mOpened;
 }
 
 
-- (instancetype)initWithStream:(NSStream *)aStream delegate:(id)aDelegate
+- (instancetype)initWithInputStream:(NSInputStream *)aInputStream outputStream:(NSOutputStream *)aOutputStream delegate:(id)aDelegate
 {
     self = [super init];
     
     if (self)
     {
         mDelegate = aDelegate;
-        mStream   = [aStream retain];
-        mBuffer   = [[NSMutableData alloc] init];
         
-        [mStream setDelegate:self];
+        mInStream = [aInputStream retain];
+        mInBuffer = [[NSMutableData alloc] init];
+        [mInStream setDelegate:self];
+        
+        mOutStream = [aOutputStream retain];
+        mOutBuffer = [[NSMutableData alloc] init];
+        [mOutStream setDelegate:self];
     }
     
     return self;
@@ -42,11 +52,17 @@ static const NSInteger kMaxBufferSize = 1024;
 {
     [self close];
     
-    [mStream release];
-    [mBuffer release];
+    [mInStream release];
+    [mInBuffer release];
+    
+    [mOutStream release];
+    [mOutBuffer release];
     
     [super dealloc];
 }
+
+
+#pragma mark -
 
 
 - (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)aEventCode
@@ -77,15 +93,27 @@ static const NSInteger kMaxBufferSize = 1024;
 
 - (void)open
 {
-    [mStream open];
-    [mStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [mInStream open];
+    [mInStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+
+    [mOutStream open];
+    [mOutStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
 
 - (void)close
 {
-    [mStream close];
-    [mStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    [mInStream close];
+    [mInStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+
+    [mOutStream close];
+    [mOutStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    
+    if ([mInStream streamStatus] == NSStreamStatusClosed &&
+        [mOutStream streamStatus] == NSStreamStatusClosed)
+    {
+        [self setOpened:NO];
+    }
 }
 
 
@@ -95,16 +123,16 @@ static const NSInteger kMaxBufferSize = 1024;
     {
         return;
     }
-    
-    NSInteger sHandeledLength = 1;
-    
-    while ([mBuffer length] && sHandeledLength)
+
+    NSInteger sHandeledLength = NSIntegerMax;
+        
+    while ([mInBuffer length] && sHandeledLength)
     {
-        sHandeledLength = aBlock(mBuffer);
+        sHandeledLength = aBlock(mInBuffer);
         
         if (sHandeledLength)
         {
-            [mBuffer replaceBytesInRange:NSMakeRange(0, sHandeledLength) withBytes:NULL length:0];
+            [mInBuffer replaceBytesInRange:NSMakeRange(0, sHandeledLength) withBytes:NULL length:0];
         }
     }
 }
@@ -112,8 +140,9 @@ static const NSInteger kMaxBufferSize = 1024;
 
 - (void)writeData:(NSData *)aData
 {
-    [[self buffer] appendData:aData];
-    [self writeDataFromBuffer];
+    [mOutBuffer appendData:aData];
+    
+    [self didAppendOutBufferData];
 }
 
 
@@ -128,46 +157,42 @@ static const NSInteger kMaxBufferSize = 1024;
 
 - (void)didReceiveStreamEventOpenComplete
 {
-    
+    if ([mInStream streamStatus] == NSStreamStatusOpen &&
+        [mOutStream streamStatus] == NSStreamStatusOpen)
+    {
+        [self setOpened:YES];
+    }
 }
 
 
 - (void)didReceiveStreamEventHasBytesAvailable
 {
     UInt8      sBuffer[kMaxBufferSize];
-    NSUInteger sLength = 0;
-    NSData    *sReceivedData = nil;
+    BOOL       sNeedsDelegation = [mDelegate respondsToSelector:@selector(stream:didReadData:)];
+    NSData    *sReceivedData    = nil;
+    NSUInteger sLength          = 0;
     
-    if ([(NSInputStream *)[self stream] hasBytesAvailable])
+    while ([mInStream hasBytesAvailable])
     {
-        sLength = [(NSInputStream *)[self stream] read:sBuffer maxLength:kMaxBufferSize];
-        NSLog(@"sLength = %ld", sLength);
+        sLength = [mInStream read:sBuffer maxLength:kMaxBufferSize];
         
         if (sLength)
         {
-            sReceivedData = [NSData dataWithBytes:sBuffer length:sLength];
-            [[self buffer] appendData:sReceivedData];
-            
-            if ([[self delegate] respondsToSelector:@selector(stream:didReceiveData:)])
-            {
-                [[self delegate] stream:self didReceiveData:sReceivedData];
-            }
+            [mInBuffer appendBytes:sBuffer length:sLength];
         }
-        else
+        
+        if (sLength && sNeedsDelegation)
         {
-            NSLog(@"no buffer!");
+            sReceivedData = [NSData dataWithBytes:sBuffer length:sLength];
+            [mDelegate stream:self didReadData:sReceivedData];
         }
-    }
-    else
-    {
-        NSLog(@"???");
     }
 }
 
 
 - (void)didReceiveStreamEventHasSpaceAvailable
 {
-    [self writeDataFromBuffer];
+    [self didAppendOutBufferData];
 }
 
 
@@ -186,41 +211,76 @@ static const NSInteger kMaxBufferSize = 1024;
 #pragma mark -
 
 
-- (NSStream *)stream
+- (void)setOpened:(BOOL)aOpened
 {
-    return mStream;
-}
-
-
-- (NSMutableData *)buffer
-{
-    return mBuffer;
-}
-
-
-- (id)delegate
-{
-    return mDelegate;
-}
-
-
-- (void)writeDataFromBuffer
-{
-    NSOutputStream *sStream = (NSOutputStream *)[self stream];
-    NSMutableData  *sBuffer = [self buffer];
-    
-    if ([sStream hasSpaceAvailable] && [[self buffer] length])
+    if (mOpened != aOpened)
     {
-        NSInteger sWrittenLength = [sStream write:[sBuffer bytes] maxLength:[sBuffer length]];
+        mOpened = aOpened;
         
-        if (sWrittenLength > 0)
+        [self didChangeOpened];
+    }
+}
+
+
+- (void)didChangeOpened
+{
+    if (mOpened)
+    {
+        if ([mDelegate respondsToSelector:@selector(streamDidOpen:)])
         {
-            [sBuffer replaceBytesInRange:NSMakeRange(0, sWrittenLength) withBytes:NULL length:0];
+            [mDelegate streamDidOpen:self];
+        }
+    }
+    else
+    {
+        if ([mDelegate respondsToSelector:@selector(streamDidClose:)])
+        {
+            [mDelegate streamDidClose:self];
         }
     }
 }
 
 
+- (void)didAppendOutBufferData
+{
+    if (![self canWriteData])
+    {
+        return;
+    }
+
+    NSInteger sLength = [mOutStream write:[mOutBuffer bytes] maxLength:[mOutBuffer length]];
+
+    if (sLength)
+    {
+        [self didWriteDataLength:sLength];
+    }
+}
+
+
+- (BOOL)canWriteData
+{
+    return ([mOutStream hasSpaceAvailable] && [mOutBuffer length]) ? YES : NO;
+}
+
+
+- (void)didWriteDataLength:(NSInteger)aLength
+{
+    NSRange sRange           = NSMakeRange(0, aLength);
+    BOOL    sNeedsDelegation = [mDelegate respondsToSelector:@selector(stream:didWriteData:)];
+    NSData *sWrittenData     = nil;
+    
+    if (sNeedsDelegation)
+    {
+        sWrittenData = [mOutBuffer subdataWithRange:sRange];
+    }
+    
+    [mOutBuffer replaceBytesInRange:sRange withBytes:NULL length:0];
+    
+    if (sNeedsDelegation)
+    {
+        [mDelegate stream:self didWriteData:sWrittenData];
+    }
+}
+
+
 @end
-
-
