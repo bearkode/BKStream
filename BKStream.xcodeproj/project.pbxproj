@@ -7,42 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E244A511AD3CBC300C11BDD /* BKStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E244A501AD3CBC300C11BDD /* BKStream.h */; };
-		2E244A531AD3CBC300C11BDD /* BKStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E244A521AD3CBC300C11BDD /* BKStream.m */; };
-		2E244A591AD3CBC300C11BDD /* libBKStream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E244A4D1AD3CBC300C11BDD /* libBKStream.a */; };
+		2E244A6E1AD3CC3E00C11BDD /* BKStreamIOS.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2E244A6D1AD3CC3E00C11BDD /* BKStreamIOS.h */; };
+		2E244A701AD3CC3E00C11BDD /* BKStreamIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E244A6F1AD3CC3E00C11BDD /* BKStreamIOS.m */; };
+		2E29EBC91AD3CCE1000FFBEB /* BKStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E244A521AD3CBC300C11BDD /* BKStream.m */; };
+		2E29EBCA1AD3CCE2000FFBEB /* BKStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E244A521AD3CBC300C11BDD /* BKStream.m */; };
+		2E29EBCE1AD3D59D000FFBEB /* BKInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E29EBCC1AD3D59D000FFBEB /* BKInputStream.h */; };
+		2E29EBCF1AD3D59D000FFBEB /* BKInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E29EBCD1AD3D59D000FFBEB /* BKInputStream.m */; };
+		2E29EBD01AD3D59D000FFBEB /* BKInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E29EBCD1AD3D59D000FFBEB /* BKInputStream.m */; };
+		2E29EBD31AD3DBAE000FFBEB /* BKOutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E29EBD11AD3DBAE000FFBEB /* BKOutputStream.h */; };
+		2E29EBD41AD3DBAE000FFBEB /* BKOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E29EBD21AD3DBAE000FFBEB /* BKOutputStream.m */; };
+		2E29EBD51AD3DBAE000FFBEB /* BKOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E29EBD21AD3DBAE000FFBEB /* BKOutputStream.m */; };
+		2EFC6AA31AD3CCAE00F0FA8E /* BKStreamOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EFC6AA21AD3CCAE00F0FA8E /* BKStreamOSX.h */; };
+		2EFC6AA51AD3CCAE00F0FA8E /* BKStreamOSX.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFC6AA41AD3CCAE00F0FA8E /* BKStreamOSX.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		2E244A5A1AD3CBC300C11BDD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2E244A451AD3CBC300C11BDD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2E244A4C1AD3CBC300C11BDD;
-			remoteInfo = BKStream;
+/* Begin PBXCopyFilesBuildPhase section */
+		2E244A691AD3CC3E00C11BDD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				2E244A6E1AD3CC3E00C11BDD /* BKStreamIOS.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXContainerItemProxy section */
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2E244A4D1AD3CBC300C11BDD /* libBKStream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBKStream.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E244A501AD3CBC300C11BDD /* BKStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKStream.h; sourceTree = "<group>"; };
 		2E244A521AD3CBC300C11BDD /* BKStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKStream.m; sourceTree = "<group>"; };
-		2E244A581AD3CBC300C11BDD /* BKStreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BKStreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E244A5E1AD3CBC300C11BDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E244A6B1AD3CC3E00C11BDD /* libBKStreamIOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBKStreamIOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E244A6D1AD3CC3E00C11BDD /* BKStreamIOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKStreamIOS.h; sourceTree = "<group>"; };
+		2E244A6F1AD3CC3E00C11BDD /* BKStreamIOS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKStreamIOS.m; sourceTree = "<group>"; };
+		2E29EBCC1AD3D59D000FFBEB /* BKInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKInputStream.h; sourceTree = "<group>"; };
+		2E29EBCD1AD3D59D000FFBEB /* BKInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKInputStream.m; sourceTree = "<group>"; };
+		2E29EBD11AD3DBAE000FFBEB /* BKOutputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKOutputStream.h; sourceTree = "<group>"; };
+		2E29EBD21AD3DBAE000FFBEB /* BKOutputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKOutputStream.m; sourceTree = "<group>"; };
+		2EFC6AA01AD3CCAE00F0FA8E /* libBKStreamOSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBKStreamOSX.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EFC6AA21AD3CCAE00F0FA8E /* BKStreamOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKStreamOSX.h; sourceTree = "<group>"; };
+		2EFC6AA41AD3CCAE00F0FA8E /* BKStreamOSX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKStreamOSX.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2E244A4A1AD3CBC300C11BDD /* Frameworks */ = {
+		2E244A681AD3CC3E00C11BDD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2E244A551AD3CBC300C11BDD /* Frameworks */ = {
+		2EFC6A9D1AD3CCAE00F0FA8E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E244A591AD3CBC300C11BDD /* libBKStream.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				2E244A4F1AD3CBC300C11BDD /* BKStream */,
-				2E244A5C1AD3CBC300C11BDD /* BKStreamTests */,
+				2E244A6C1AD3CC3E00C11BDD /* BKStreamIOS */,
+				2EFC6AA11AD3CCAE00F0FA8E /* BKStreamOSX */,
 				2E244A4E1AD3CBC300C11BDD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,8 +80,8 @@
 		2E244A4E1AD3CBC300C11BDD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2E244A4D1AD3CBC300C11BDD /* libBKStream.a */,
-				2E244A581AD3CBC300C11BDD /* BKStreamTests.xctest */,
+				2E244A6B1AD3CC3E00C11BDD /* libBKStreamIOS.a */,
+				2EFC6AA01AD3CCAE00F0FA8E /* libBKStreamOSX.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,74 +91,81 @@
 			children = (
 				2E244A501AD3CBC300C11BDD /* BKStream.h */,
 				2E244A521AD3CBC300C11BDD /* BKStream.m */,
+				2E29EBCC1AD3D59D000FFBEB /* BKInputStream.h */,
+				2E29EBCD1AD3D59D000FFBEB /* BKInputStream.m */,
+				2E29EBD11AD3DBAE000FFBEB /* BKOutputStream.h */,
+				2E29EBD21AD3DBAE000FFBEB /* BKOutputStream.m */,
 			);
 			path = BKStream;
 			sourceTree = "<group>";
 		};
-		2E244A5C1AD3CBC300C11BDD /* BKStreamTests */ = {
+		2E244A6C1AD3CC3E00C11BDD /* BKStreamIOS */ = {
 			isa = PBXGroup;
 			children = (
-				2E244A5D1AD3CBC300C11BDD /* Supporting Files */,
+				2E244A6D1AD3CC3E00C11BDD /* BKStreamIOS.h */,
+				2E244A6F1AD3CC3E00C11BDD /* BKStreamIOS.m */,
 			);
-			path = BKStreamTests;
+			path = BKStreamIOS;
 			sourceTree = "<group>";
 		};
-		2E244A5D1AD3CBC300C11BDD /* Supporting Files */ = {
+		2EFC6AA11AD3CCAE00F0FA8E /* BKStreamOSX */ = {
 			isa = PBXGroup;
 			children = (
-				2E244A5E1AD3CBC300C11BDD /* Info.plist */,
+				2EFC6AA21AD3CCAE00F0FA8E /* BKStreamOSX.h */,
+				2EFC6AA41AD3CCAE00F0FA8E /* BKStreamOSX.m */,
 			);
-			name = "Supporting Files";
+			path = BKStreamOSX;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		2E244A4B1AD3CBC300C11BDD /* Headers */ = {
+		2EFC6A9E1AD3CCAE00F0FA8E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E244A511AD3CBC300C11BDD /* BKStream.h in Headers */,
+				2E29EBD31AD3DBAE000FFBEB /* BKOutputStream.h in Headers */,
+				2E29EBCE1AD3D59D000FFBEB /* BKInputStream.h in Headers */,
+				2EFC6AA31AD3CCAE00F0FA8E /* BKStreamOSX.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2E244A4C1AD3CBC300C11BDD /* BKStream */ = {
+		2E244A6A1AD3CC3E00C11BDD /* BKStreamIOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2E244A611AD3CBC300C11BDD /* Build configuration list for PBXNativeTarget "BKStream" */;
+			buildConfigurationList = 2E244A7C1AD3CC3E00C11BDD /* Build configuration list for PBXNativeTarget "BKStreamIOS" */;
 			buildPhases = (
-				2E244A491AD3CBC300C11BDD /* Sources */,
-				2E244A4A1AD3CBC300C11BDD /* Frameworks */,
-				2E244A4B1AD3CBC300C11BDD /* Headers */,
+				2E244A671AD3CC3E00C11BDD /* Sources */,
+				2E244A681AD3CC3E00C11BDD /* Frameworks */,
+				2E244A691AD3CC3E00C11BDD /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = BKStream;
-			productName = BKStream;
-			productReference = 2E244A4D1AD3CBC300C11BDD /* libBKStream.a */;
+			name = BKStreamIOS;
+			productName = BKStreamIOS;
+			productReference = 2E244A6B1AD3CC3E00C11BDD /* libBKStreamIOS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		2E244A571AD3CBC300C11BDD /* BKStreamTests */ = {
+		2EFC6A9F1AD3CCAE00F0FA8E /* BKStreamOSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2E244A641AD3CBC300C11BDD /* Build configuration list for PBXNativeTarget "BKStreamTests" */;
+			buildConfigurationList = 2EFC6AB11AD3CCAE00F0FA8E /* Build configuration list for PBXNativeTarget "BKStreamOSX" */;
 			buildPhases = (
-				2E244A541AD3CBC300C11BDD /* Sources */,
-				2E244A551AD3CBC300C11BDD /* Frameworks */,
-				2E244A561AD3CBC300C11BDD /* Resources */,
+				2EFC6A9C1AD3CCAE00F0FA8E /* Sources */,
+				2EFC6A9D1AD3CCAE00F0FA8E /* Frameworks */,
+				2EFC6A9E1AD3CCAE00F0FA8E /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2E244A5B1AD3CBC300C11BDD /* PBXTargetDependency */,
 			);
-			name = BKStreamTests;
-			productName = BKStreamTests;
-			productReference = 2E244A581AD3CBC300C11BDD /* BKStreamTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = BKStreamOSX;
+			productName = BKStreamOSX;
+			productReference = 2EFC6AA01AD3CCAE00F0FA8E /* libBKStreamOSX.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -147,13 +173,14 @@
 		2E244A451AD3CBC300C11BDD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = BK;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = bearkode;
 				TargetAttributes = {
-					2E244A4C1AD3CBC300C11BDD = {
+					2E244A6A1AD3CC3E00C11BDD = {
 						CreatedOnToolsVersion = 6.2;
 					};
-					2E244A571AD3CBC300C11BDD = {
+					2EFC6A9F1AD3CCAE00F0FA8E = {
 						CreatedOnToolsVersion = 6.2;
 					};
 				};
@@ -170,47 +197,36 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2E244A4C1AD3CBC300C11BDD /* BKStream */,
-				2E244A571AD3CBC300C11BDD /* BKStreamTests */,
+				2E244A6A1AD3CC3E00C11BDD /* BKStreamIOS */,
+				2EFC6A9F1AD3CCAE00F0FA8E /* BKStreamOSX */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		2E244A561AD3CBC300C11BDD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		2E244A491AD3CBC300C11BDD /* Sources */ = {
+		2E244A671AD3CC3E00C11BDD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E244A531AD3CBC300C11BDD /* BKStream.m in Sources */,
+				2E29EBCF1AD3D59D000FFBEB /* BKInputStream.m in Sources */,
+				2E29EBD41AD3DBAE000FFBEB /* BKOutputStream.m in Sources */,
+				2E29EBCA1AD3CCE2000FFBEB /* BKStream.m in Sources */,
+				2E244A701AD3CC3E00C11BDD /* BKStreamIOS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2E244A541AD3CBC300C11BDD /* Sources */ = {
+		2EFC6A9C1AD3CCAE00F0FA8E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E29EBD01AD3D59D000FFBEB /* BKInputStream.m in Sources */,
+				2E29EBD51AD3DBAE000FFBEB /* BKOutputStream.m in Sources */,
+				2E29EBC91AD3CCE1000FFBEB /* BKStream.m in Sources */,
+				2EFC6AA51AD3CCAE00F0FA8E /* BKStreamOSX.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2E244A5B1AD3CBC300C11BDD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2E244A4C1AD3CBC300C11BDD /* BKStream */;
-			targetProxy = 2E244A5A1AD3CBC300C11BDD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2E244A5F1AD3CBC300C11BDD /* Debug */ = {
@@ -287,50 +303,53 @@
 			};
 			name = Release;
 		};
-		2E244A621AD3CBC300C11BDD /* Debug */ = {
+		2E244A7D1AD3CC3E00C11BDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		2E244A631AD3CBC300C11BDD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		2E244A651AD3CBC300C11BDD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = BKStreamTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2E244A7E1AD3CC3E00C11BDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2EFC6AB21AD3CCAE00F0FA8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		2E244A661AD3CBC300C11BDD /* Release */ = {
+		2EFC6AB31AD3CCAE00F0FA8E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = BKStreamTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -347,21 +366,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2E244A611AD3CBC300C11BDD /* Build configuration list for PBXNativeTarget "BKStream" */ = {
+		2E244A7C1AD3CC3E00C11BDD /* Build configuration list for PBXNativeTarget "BKStreamIOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2E244A621AD3CBC300C11BDD /* Debug */,
-				2E244A631AD3CBC300C11BDD /* Release */,
+				2E244A7D1AD3CC3E00C11BDD /* Debug */,
+				2E244A7E1AD3CC3E00C11BDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		2E244A641AD3CBC300C11BDD /* Build configuration list for PBXNativeTarget "BKStreamTests" */ = {
+		2EFC6AB11AD3CCAE00F0FA8E /* Build configuration list for PBXNativeTarget "BKStreamOSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2E244A651AD3CBC300C11BDD /* Debug */,
-				2E244A661AD3CBC300C11BDD /* Release */,
+				2EFC6AB21AD3CCAE00F0FA8E /* Debug */,
+				2EFC6AB31AD3CCAE00F0FA8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

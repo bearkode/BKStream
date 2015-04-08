@@ -1,13 +1,39 @@
-//
-//  BKStream.h
-//  BKStream
-//
-//  Created by cgkim on 2015. 4. 7..
-//  Copyright (c) 2015년 bearkode. All rights reserved.
-//
+/*
+ *  BKStream.h
+ *  BKStream
+ *
+ *  Created by bearkode on 2015. 4. 7..
+ *  Copyright (c) 2015 bearkode. All rights reserved.
+ *
+ */
 
 #import <Foundation/Foundation.h>
 
-@interface BKStream : NSObject
+
+@interface BKStream : NSObject <NSStreamDelegate>
+
+
+- (instancetype)initWithStream:(NSStream *)aStream delegate:(id)aDelegate;
+
+
+- (void)open;
+- (void)close;
+
+
+/*  Override  */
+- (void)didReceiveStreamEventNone;
+- (void)didReceiveStreamEventOpenComplete;
+- (void)didReceiveStreamEventHasBytesAvailable;
+- (void)didReceiveStreamEventHasSpaceAvailable;
+- (void)didReceiveStreamEventErrorOccurred;
+- (void)didReceiveStreamEventEndEncountered;
+
+
+@end
+
+
+@protocol NEBufferedStreamDelegate <NSObject>
+
+- (void)stream:(BKStream *)aStream didReceiveData:(NSData *)aData;
 
 @end
