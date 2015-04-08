@@ -10,6 +10,9 @@
 #import "BKStream.h"
 
 
+static const NSInteger kMaxBufferSize = 1024;
+
+
 @implementation BKStream
 {
     id             mDelegate;
@@ -86,6 +89,34 @@
 }
 
 
+- (void)handleDataUsingBlock:(NSInteger (^)(NSData *aData))aBlock
+{
+    if (!aBlock)
+    {
+        return;
+    }
+    
+    NSInteger sHandeledLength = 1;
+    
+    while ([mBuffer length] && sHandeledLength)
+    {
+        sHandeledLength = aBlock(mBuffer);
+        
+        if (sHandeledLength)
+        {
+            [mBuffer replaceBytesInRange:NSMakeRange(0, sHandeledLength) withBytes:NULL length:0];
+        }
+    }
+}
+
+
+- (void)writeData:(NSData *)aData
+{
+    [[self buffer] appendData:aData];
+    [self writeDataFromBuffer];
+}
+
+
 #pragma mark -
 
 
@@ -103,13 +134,40 @@
 
 - (void)didReceiveStreamEventHasBytesAvailable
 {
+    UInt8      sBuffer[kMaxBufferSize];
+    NSUInteger sLength = 0;
+    NSData    *sReceivedData = nil;
     
+    if ([(NSInputStream *)[self stream] hasBytesAvailable])
+    {
+        sLength = [(NSInputStream *)[self stream] read:sBuffer maxLength:kMaxBufferSize];
+        NSLog(@"sLength = %ld", sLength);
+        
+        if (sLength)
+        {
+            sReceivedData = [NSData dataWithBytes:sBuffer length:sLength];
+            [[self buffer] appendData:sReceivedData];
+            
+            if ([[self delegate] respondsToSelector:@selector(stream:didReceiveData:)])
+            {
+                [[self delegate] stream:self didReceiveData:sReceivedData];
+            }
+        }
+        else
+        {
+            NSLog(@"no buffer!");
+        }
+    }
+    else
+    {
+        NSLog(@"???");
+    }
 }
 
 
 - (void)didReceiveStreamEventHasSpaceAvailable
 {
-    
+    [self writeDataFromBuffer];
 }
 
 
@@ -121,7 +179,7 @@
 
 - (void)didReceiveStreamEventEndEncountered
 {
-    
+    [self close];
 }
 
 
@@ -143,6 +201,23 @@
 - (id)delegate
 {
     return mDelegate;
+}
+
+
+- (void)writeDataFromBuffer
+{
+    NSOutputStream *sStream = (NSOutputStream *)[self stream];
+    NSMutableData  *sBuffer = [self buffer];
+    
+    if ([sStream hasSpaceAvailable] && [[self buffer] length])
+    {
+        NSInteger sWrittenLength = [sStream write:[sBuffer bytes] maxLength:[sBuffer length]];
+        
+        if (sWrittenLength > 0)
+        {
+            [sBuffer replaceBytesInRange:NSMakeRange(0, sWrittenLength) withBytes:NULL length:0];
+        }
+    }
 }
 
 

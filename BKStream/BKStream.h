@@ -20,6 +20,10 @@
 - (void)close;
 
 
+- (void)handleDataUsingBlock:(NSInteger (^)(NSData *aData))aBlock;
+- (void)writeData:(NSData *)aData;
+
+
 /*  Override  */
 - (void)didReceiveStreamEventNone;
 - (void)didReceiveStreamEventOpenComplete;

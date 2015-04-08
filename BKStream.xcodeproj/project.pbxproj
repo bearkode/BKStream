@@ -17,6 +17,8 @@
 		2E29EBD31AD3DBAE000FFBEB /* BKOutputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E29EBD11AD3DBAE000FFBEB /* BKOutputStream.h */; };
 		2E29EBD41AD3DBAE000FFBEB /* BKOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E29EBD21AD3DBAE000FFBEB /* BKOutputStream.m */; };
 		2E29EBD51AD3DBAE000FFBEB /* BKOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E29EBD21AD3DBAE000FFBEB /* BKOutputStream.m */; };
+		2E29EBDF1AD4D2BE000FFBEB /* BKStreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E29EBDE1AD4D2BE000FFBEB /* BKStreamTests.m */; };
+		2E29EBE31AD4D2FA000FFBEB /* BKStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E244A521AD3CBC300C11BDD /* BKStream.m */; };
 		2EFC6AA31AD3CCAE00F0FA8E /* BKStreamOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EFC6AA21AD3CCAE00F0FA8E /* BKStreamOSX.h */; };
 		2EFC6AA51AD3CCAE00F0FA8E /* BKStreamOSX.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFC6AA41AD3CCAE00F0FA8E /* BKStreamOSX.m */; };
 /* End PBXBuildFile section */
@@ -44,6 +46,9 @@
 		2E29EBCD1AD3D59D000FFBEB /* BKInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKInputStream.m; sourceTree = "<group>"; };
 		2E29EBD11AD3DBAE000FFBEB /* BKOutputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKOutputStream.h; sourceTree = "<group>"; };
 		2E29EBD21AD3DBAE000FFBEB /* BKOutputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKOutputStream.m; sourceTree = "<group>"; };
+		2E29EBDA1AD4D2BE000FFBEB /* BKStreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BKStreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E29EBDD1AD4D2BE000FFBEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E29EBDE1AD4D2BE000FFBEB /* BKStreamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKStreamTests.m; sourceTree = "<group>"; };
 		2EFC6AA01AD3CCAE00F0FA8E /* libBKStreamOSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBKStreamOSX.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EFC6AA21AD3CCAE00F0FA8E /* BKStreamOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKStreamOSX.h; sourceTree = "<group>"; };
 		2EFC6AA41AD3CCAE00F0FA8E /* BKStreamOSX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BKStreamOSX.m; sourceTree = "<group>"; };
@@ -51,6 +56,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		2E244A681AD3CC3E00C11BDD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E29EBD71AD4D2BE000FFBEB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -73,6 +85,7 @@
 				2E244A4F1AD3CBC300C11BDD /* BKStream */,
 				2E244A6C1AD3CC3E00C11BDD /* BKStreamIOS */,
 				2EFC6AA11AD3CCAE00F0FA8E /* BKStreamOSX */,
+				2E29EBDB1AD4D2BE000FFBEB /* BKStreamTests */,
 				2E244A4E1AD3CBC300C11BDD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,6 +95,7 @@
 			children = (
 				2E244A6B1AD3CC3E00C11BDD /* libBKStreamIOS.a */,
 				2EFC6AA01AD3CCAE00F0FA8E /* libBKStreamOSX.a */,
+				2E29EBDA1AD4D2BE000FFBEB /* BKStreamTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +120,23 @@
 				2E244A6F1AD3CC3E00C11BDD /* BKStreamIOS.m */,
 			);
 			path = BKStreamIOS;
+			sourceTree = "<group>";
+		};
+		2E29EBDB1AD4D2BE000FFBEB /* BKStreamTests */ = {
+			isa = PBXGroup;
+			children = (
+				2E29EBDE1AD4D2BE000FFBEB /* BKStreamTests.m */,
+				2E29EBDC1AD4D2BE000FFBEB /* Supporting Files */,
+			);
+			path = BKStreamTests;
+			sourceTree = "<group>";
+		};
+		2E29EBDC1AD4D2BE000FFBEB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2E29EBDD1AD4D2BE000FFBEB /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		2EFC6AA11AD3CCAE00F0FA8E /* BKStreamOSX */ = {
@@ -150,6 +181,23 @@
 			productReference = 2E244A6B1AD3CC3E00C11BDD /* libBKStreamIOS.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		2E29EBD91AD4D2BE000FFBEB /* BKStreamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E29EBE01AD4D2BE000FFBEB /* Build configuration list for PBXNativeTarget "BKStreamTests" */;
+			buildPhases = (
+				2E29EBD61AD4D2BE000FFBEB /* Sources */,
+				2E29EBD71AD4D2BE000FFBEB /* Frameworks */,
+				2E29EBD81AD4D2BE000FFBEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BKStreamTests;
+			productName = BKStreamTests;
+			productReference = 2E29EBDA1AD4D2BE000FFBEB /* BKStreamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2EFC6A9F1AD3CCAE00F0FA8E /* BKStreamOSX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2EFC6AB11AD3CCAE00F0FA8E /* Build configuration list for PBXNativeTarget "BKStreamOSX" */;
@@ -180,6 +228,9 @@
 					2E244A6A1AD3CC3E00C11BDD = {
 						CreatedOnToolsVersion = 6.2;
 					};
+					2E29EBD91AD4D2BE000FFBEB = {
+						CreatedOnToolsVersion = 6.2;
+					};
 					2EFC6A9F1AD3CCAE00F0FA8E = {
 						CreatedOnToolsVersion = 6.2;
 					};
@@ -199,9 +250,20 @@
 			targets = (
 				2E244A6A1AD3CC3E00C11BDD /* BKStreamIOS */,
 				2EFC6A9F1AD3CCAE00F0FA8E /* BKStreamOSX */,
+				2E29EBD91AD4D2BE000FFBEB /* BKStreamTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E29EBD81AD4D2BE000FFBEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2E244A671AD3CC3E00C11BDD /* Sources */ = {
@@ -212,6 +274,15 @@
 				2E29EBD41AD3DBAE000FFBEB /* BKOutputStream.m in Sources */,
 				2E29EBCA1AD3CCE2000FFBEB /* BKStream.m in Sources */,
 				2E244A701AD3CC3E00C11BDD /* BKStreamIOS.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E29EBD61AD4D2BE000FFBEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E29EBE31AD4D2FA000FFBEB /* BKStream.m in Sources */,
+				2E29EBDF1AD4D2BE000FFBEB /* BKStreamTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +403,40 @@
 			};
 			name = Release;
 		};
+		2E29EBE11AD4D2BE000FFBEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BKStreamTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2E29EBE21AD4D2BE000FFBEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BKStreamTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		2EFC6AB21AD3CCAE00F0FA8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -374,6 +479,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		2E29EBE01AD4D2BE000FFBEB /* Build configuration list for PBXNativeTarget "BKStreamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E29EBE11AD4D2BE000FFBEB /* Debug */,
+				2E29EBE21AD4D2BE000FFBEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		2EFC6AB11AD3CCAE00F0FA8E /* Build configuration list for PBXNativeTarget "BKStreamOSX" */ = {
 			isa = XCConfigurationList;
