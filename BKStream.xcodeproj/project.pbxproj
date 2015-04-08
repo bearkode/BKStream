@@ -7,33 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E244A6E1AD3CC3E00C11BDD /* BKStreamIOS.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2E244A6D1AD3CC3E00C11BDD /* BKStreamIOS.h */; };
 		2E244A701AD3CC3E00C11BDD /* BKStreamIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E244A6F1AD3CC3E00C11BDD /* BKStreamIOS.m */; };
 		2E29EBC91AD3CCE1000FFBEB /* BKStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E244A521AD3CBC300C11BDD /* BKStream.m */; };
 		2E29EBCA1AD3CCE2000FFBEB /* BKStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E244A521AD3CBC300C11BDD /* BKStream.m */; };
 		2E29EBDF1AD4D2BE000FFBEB /* BKStreamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E29EBDE1AD4D2BE000FFBEB /* BKStreamTests.m */; };
 		2E29EBE31AD4D2FA000FFBEB /* BKStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E244A521AD3CBC300C11BDD /* BKStream.m */; };
-		2E5FAC9C1AD4D43400E3C771 /* BKStreamUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E5FAC9A1AD4D43400E3C771 /* BKStreamUtils.h */; };
+		2E5FAC9C1AD4D43400E3C771 /* BKStreamUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E5FAC9A1AD4D43400E3C771 /* BKStreamUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2E5FAC9D1AD4D43400E3C771 /* BKStreamUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5FAC9B1AD4D43400E3C771 /* BKStreamUtils.m */; };
 		2E5FAC9E1AD4D43400E3C771 /* BKStreamUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5FAC9B1AD4D43400E3C771 /* BKStreamUtils.m */; };
 		2E5FAC9F1AD4D43400E3C771 /* BKStreamUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5FAC9B1AD4D43400E3C771 /* BKStreamUtils.m */; };
 		2E5FACA11AD4D50000E3C771 /* BKStreamUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5FACA01AD4D50000E3C771 /* BKStreamUtilsTests.m */; };
-		2EFC6AA31AD3CCAE00F0FA8E /* BKStreamOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EFC6AA21AD3CCAE00F0FA8E /* BKStreamOSX.h */; };
+		2E5FACA51AD51EBF00E3C771 /* BKStreamUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E5FAC9A1AD4D43400E3C771 /* BKStreamUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2E5FACA61AD51EC400E3C771 /* BKStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E244A501AD3CBC300C11BDD /* BKStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2E5FACA71AD51EE900E3C771 /* BKStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E244A501AD3CBC300C11BDD /* BKStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2EFC6AA51AD3CCAE00F0FA8E /* BKStreamOSX.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFC6AA41AD3CCAE00F0FA8E /* BKStreamOSX.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		2E244A691AD3CC3E00C11BDD /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
-			files = (
-				2E244A6E1AD3CC3E00C11BDD /* BKStreamIOS.h in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2E244A501AD3CBC300C11BDD /* BKStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BKStream.h; sourceTree = "<group>"; };
@@ -148,11 +136,20 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		2E5FACA41AD51EB800E3C771 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E5FACA61AD51EC400E3C771 /* BKStream.h in Headers */,
+				2E5FACA51AD51EBF00E3C771 /* BKStreamUtils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EFC6A9E1AD3CCAE00F0FA8E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EFC6AA31AD3CCAE00F0FA8E /* BKStreamOSX.h in Headers */,
+				2E5FACA71AD51EE900E3C771 /* BKStream.h in Headers */,
 				2E5FAC9C1AD4D43400E3C771 /* BKStreamUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,7 +163,7 @@
 			buildPhases = (
 				2E244A671AD3CC3E00C11BDD /* Sources */,
 				2E244A681AD3CC3E00C11BDD /* Frameworks */,
-				2E244A691AD3CC3E00C11BDD /* CopyFiles */,
+				2E5FACA41AD51EB800E3C771 /* Headers */,
 			);
 			buildRules = (
 			);
