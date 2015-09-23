@@ -42,9 +42,9 @@ NSArray *BKGetAddressesFromHostName(NSString *aHostName)
             return nil;
         }
         
-        getnameinfo(sAddress, sAddress->sa_len, sIPAddress, INET6_ADDRSTRLEN, nil, 0, NI_NUMERICHOST);
+        int sResult = getnameinfo(sAddress, sAddress->sa_len, sIPAddress, INET6_ADDRSTRLEN, nil, 0, NI_NUMERICHOST);
 
-        if (sIPAddress == nil)
+        if (sResult != 0)
         {
             return nil;
         }
